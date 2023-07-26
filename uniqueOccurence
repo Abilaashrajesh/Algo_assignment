@@ -1,0 +1,9 @@
+ def uniqueOccurrences(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        ans=collections.Counter(arr)
+        if(len(set(ans.values()))!=len(ans)):
+            return False
+        return True      
