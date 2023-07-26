@@ -1,0 +1,11 @@
+  def findDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        dictionary=collections.Counter(nums)
+        ans=[]
+        for i,j in dictionary.items():
+            if j==2:
+                ans.append(i)
+        return ans
