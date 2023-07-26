@@ -1,0 +1,17 @@
+def maxScore(self, cardPoints, k):
+        """
+        :type cardPoints: List[int]
+        :type k: int
+        :rtype: int
+        """
+        sum1 = sum(cardPoints[:k])
+        sum1_temp = sum1
+        
+        for i in range(k):
+            sub_left = k-i-1
+            add_right = len(cardPoints)-i-1
+            sum1_temp = sum1_temp-cardPoints[sub_left]
+            sum1_temp = sum1_temp+cardPoints[add_right]
+            
+            sum1 = max(sum1, sum1_temp)
+        return sum1     
